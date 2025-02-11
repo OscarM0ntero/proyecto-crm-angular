@@ -1,0 +1,18 @@
+<div class="wrapper">
+	<section class="contact-section">
+		<p>Hola</p>
+	</section>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <h1 [routerLink]="['']" routerLinkActive="active" class="hero-title">M&H Torremolinos</h1>
+        <a [routerLink]="['booking']" routerLinkActive="active" class="book-button">BOOK YOUR STAY</a>
+    </section>
+
+    <div class="container my-5">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<footer class="text-center p-3 mt-0" style="background: #68806A; color: white;">
+    &copy; {{ currentYear }} M&H Torremolinos. Todos los derechos reservados.
+</footer>
