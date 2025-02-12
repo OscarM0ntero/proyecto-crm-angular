@@ -1,6 +1,5 @@
 import { NgImageSliderModule } from 'ng-image-slider';
- 
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
