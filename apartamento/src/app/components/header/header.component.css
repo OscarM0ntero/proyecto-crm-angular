@@ -6,12 +6,15 @@
 	align-items: normal;
 	align-content: stretch;
 	color: #68806A;
-	margin-top: 5px;
 	
 }
 
 .contact-section {
-	width: 60%;
+width: 100%;
+}
+
+.contact-div {
+	width: 40%;
 	margin: auto;
 	display: block;
 	flex-grow: 0;
@@ -19,6 +22,19 @@
 	flex-basis: auto;
 	align-self: auto;
 	order: 0;
+	padding: 5px;
+}
+
+.contact-line {
+	display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-line li {
+	white-space: nowrap; /* Evita que el texto dentro del <li> haga salto de línea */
 }
 
 .tiny-icon {
@@ -36,10 +52,16 @@
 }
 
 .nav-section {
-	width: 50%;
+	width: 100%;
+	padding: 5px 5px;
+}
+
+.nav-div {
+	width: 40%;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

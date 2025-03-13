@@ -1,26 +1,33 @@
 <div class="wrapper">
-    <app-header></app-header>
-<!--
+	<app-header></app-header>
+	<!--
     <div class="image-slider-container">
         <ng-image-slider
         [images]="imageObject" [infinite]="true" [autoSlide]="2.5" [manageImageRatio]="true" [imageSize]="{width: '100%', height: '400px'}" [animationSpeed]="0.5"></ng-image-slider>
     </div>
 -->
-    
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <h1 [routerLink]="['']" routerLinkActive="active" class="hero-title">M&H Torremolinos</h1>
-        <!--
-        <a [routerLink]="['booking']" routerLinkActive="active" class="book-button">BOOK YOUR STAY</a>
-        -->
-    </section>
-    
 
-    <div class="container my-5">
-        <router-outlet></router-outlet>
-    </div>
+	<section>
+		<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000"
+			[responsiveOptions]="responsiveOptions" styleClass="layout-carousel" [showIndicators]="true"
+			indicatorsContentClass="custom-indicators">
+
+			<ng-template pTemplate="item" let-image>
+				<div class="layout-carousel-item">
+					<img [src]="image.itemImageSrc" [alt]="image.alt" />
+				</div>
+			</ng-template>
+
+		</p-carousel>
+	</section>
+
+
+
+	<div class="container my-5">
+		<router-outlet></router-outlet>
+	</div>
 </div>
 
 <footer class="text-center p-3 mt-0" style="background: #68806A; color: white;">
-    &copy; {{ currentYear }} M&H Torremolinos. Todos los derechos reservados.
+	&copy; {{ currentYear }} M&H Torremolinos. Todos los derechos reservados.
 </footer>

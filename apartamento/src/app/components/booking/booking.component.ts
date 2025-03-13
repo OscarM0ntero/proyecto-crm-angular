@@ -7,11 +7,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-booking',
-  standalone: true,
-  imports: [CommonModule, FullCalendarModule, HttpClientModule], // <-- Agregar HttpClientModule
-  templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+    selector: 'app-booking',
+    imports: [CommonModule, FullCalendarModule, HttpClientModule], // <-- Agregar HttpClientModule
+    templateUrl: './booking.component.html',
+    styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
   calendarOptions: CalendarOptions = {
@@ -73,7 +72,7 @@ export class BookingComponent implements OnInit {
 		this.calendarOptions = {
 		  ...this.calendarOptions,
 		  events: busyDays.map(date => ({
-			title: 'No disponible',
+			title: '',
 			start: date,
 			display: 'background',
 			color: 'red'

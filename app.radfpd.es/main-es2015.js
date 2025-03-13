@@ -732,6 +732,80 @@ CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
 
 /***/ }),
 
+/***/ "S+72":
+/*!*****************************************************!*\
+  !*** ./src/app/services/unidades-centro.service.ts ***!
+  \*****************************************************/
+/*! exports provided: UnidadesCentroService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnidadesCentroService", function() { return UnidadesCentroService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _shared_common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/common.service */ "JSOo");
+
+
+
+
+
+const ENDPOINT = 'unidad_centro';
+class UnidadesCentroService {
+    constructor(http, commonService) {
+        this.http = http;
+        this.commonService = commonService;
+    }
+    get() {
+        return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php`, { headers: this.commonService.headers });
+    }
+    getUnidades() {
+        return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php`, { headers: this.commonService.headers });
+    }
+    getAllUnidadesCentro() {
+        return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php`, { headers: this.commonService.headers });
+    }
+    addUnidadCentro(unidadCentro) {
+        const body = JSON.stringify(unidadCentro);
+        return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php`, body, { headers: this.commonService.headers });
+    }
+    editUnidadCentro(unidadCentro) {
+        const body = JSON.stringify(unidadCentro);
+        return this.http.put(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php`, body, { headers: this.commonService.headers });
+    }
+    deleteUnidadCentro(idUnidadCentro) {
+        return this.http.delete(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"]}/${ENDPOINT}.php?id=${idUnidadCentro}`, { headers: this.commonService.headers });
+    }
+    removeUnidadesCentro(idUnidadCentro) {
+        this.unidadCentro = this.unidadCentro.filter(unidadCentro => {
+            return Number(unidadCentro.id_unidad_centro) !== Number(idUnidadCentro);
+        });
+    }
+    updateUnidadesCentro(unidadCentro) {
+        let index = null;
+        this.unidadCentro.filter((unidadCentroFilter, indexFilter) => {
+            if (unidadCentro.id_unidad_centro === unidadCentroFilter.id_unidad_centro) {
+                index = indexFilter;
+            }
+        });
+        if (index) {
+            this.unidadCentro[index] = unidadCentro;
+        }
+    }
+}
+UnidadesCentroService.ɵfac = function UnidadesCentroService_Factory(t) { return new (t || UnidadesCentroService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_shared_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"])); };
+UnidadesCentroService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UnidadesCentroService, factory: UnidadesCentroService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UnidadesCentroService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }, { type: _shared_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "Sy1n":
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
@@ -858,7 +932,7 @@ AuthGuardService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefine
 /*!************************************!*\
   !*** ./src/app/shared/messages.ts ***!
   \************************************/
-/*! exports provided: ERROR, CLOSE, INVALID_FORM, ENTIDAD_MOTIVO_REUNION, ENTIDAD_MODO_REUNION, ENTIDAD_ZONA, ENTIDAD_TIPO_ENTIDAD, ENTIDAD_CONTACTO, ENTIDAD_ENTIDAD, ENTIDAD_REUNION, ENTIDAD_ASISTENTE, ENTIDAD_FAMILIA, ENTIDAD_UNIDAD, ENTIDAD_CICLO */
+/*! exports provided: ERROR, CLOSE, INVALID_FORM, ENTIDAD_MOTIVO_REUNION, ENTIDAD_MODO_REUNION, ENTIDAD_ZONA, ENTIDAD_TIPO_ENTIDAD, ENTIDAD_CONTACTO, ENTIDAD_ENTIDAD, ENTIDAD_REUNION, ENTIDAD_ASISTENTE, ENTIDAD_FAMILIA, ENTIDAD_UNIDAD, ENTIDAD_CICLO, ENTIDAD_UNIDAD_CENTRO */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -877,6 +951,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ENTIDAD_FAMILIA", function() { return ENTIDAD_FAMILIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ENTIDAD_UNIDAD", function() { return ENTIDAD_UNIDAD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ENTIDAD_CICLO", function() { return ENTIDAD_CICLO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ENTIDAD_UNIDAD_CENTRO", function() { return ENTIDAD_UNIDAD_CENTRO; });
 const ERROR = 'Ocurrió un fallo';
 const CLOSE = 'Cerrar';
 const INVALID_FORM = 'El formulario no es válido';
@@ -892,6 +967,7 @@ const ENTIDAD_ASISTENTE = "Asistente";
 const ENTIDAD_FAMILIA = "Familia";
 const ENTIDAD_UNIDAD = "Ciclo Formativo";
 const ENTIDAD_CICLO = "Ciclo Formativo";
+const ENTIDAD_UNIDAD_CENTRO = "Unidad Centro";
 
 
 /***/ }),
@@ -955,6 +1031,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
 /* harmony import */ var _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./entidades/datos-entidad/datos-entidad.component */ "gkmA");
 /* harmony import */ var _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reuniones/datos-reunion/datos-reunion.component */ "2/A8");
+/* harmony import */ var _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/unidades-centro.service */ "S+72");
+
 
 
 
@@ -991,7 +1069,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"],
         { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _shared_interceptor_service__WEBPACK_IMPORTED_MODULE_8__["AuthInterceptor"], multi: true },
         _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"],
-        _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"]
+        _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"],
+        _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__["UnidadesCentroService"]
     ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -1034,7 +1113,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"],
                     { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _shared_interceptor_service__WEBPACK_IMPORTED_MODULE_8__["AuthInterceptor"], multi: true },
                     _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"],
-                    _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"]
+                    _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"],
+                    _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__["UnidadesCentroService"]
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
             }]
@@ -1281,7 +1361,7 @@ FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, description, main, author, license, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"app-radfpd\",\"version\":\"1.0.2\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"buildProd\":\"ng build --prod --outputHashing=all\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"serveAll\":\"ng serve --host 10.22.3.91\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~10.2.1\",\"@angular/cdk\":\"~10.2.7\",\"@angular/common\":\"~10.2.1\",\"@angular/compiler\":\"~10.2.1\",\"@angular/core\":\"~10.2.1\",\"@angular/forms\":\"~10.2.1\",\"@angular/material\":\"^10.2.7\",\"@angular/platform-browser\":\"~10.2.1\",\"@angular/platform-browser-dynamic\":\"~10.2.1\",\"@angular/router\":\"~10.2.1\",\"@auth0/angular-jwt\":\"^4.0.0\",\"@kolkov/angular-editor\":\"^1.1.4\",\"@ngrx/store\":\"^10.1.2\",\"chart\":\"^0.1.2\",\"chart.js\":\"^3.6.0\",\"file-saver\":\"^2.0.5\",\"ngx-cookie-service\":\"^3.0.4\",\"rxjs\":\"~6.6.3\",\"tslib\":\"^2.0.0\",\"xlsx\":\"^0.17.3\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1002.0\",\"@angular/cli\":\"~10.2.0\",\"@angular/compiler-cli\":\"~10.2.1\",\"@angular/language-service\":\"~10.2.1\",\"@types/jasmine\":\"~3.3.8\",\"@types/jasminewd2\":\"~2.0.3\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^5.1.2\",\"jasmine-core\":\"~3.5.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.0.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage-istanbul-reporter\":\"~3.0.2\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~7.0.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.5\"},\"description\":\"This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.\",\"main\":\"karma.conf.js\",\"author\":\"\",\"license\":\"ISC\"}");
+module.exports = JSON.parse("{\"name\":\"app-radfpd\",\"version\":\"1.0.3\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"buildProd\":\"ng build --prod --outputHashing=all\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"serveAll\":\"ng serve --host 10.22.3.91\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~10.2.1\",\"@angular/cdk\":\"~10.2.7\",\"@angular/common\":\"~10.2.1\",\"@angular/compiler\":\"~10.2.1\",\"@angular/core\":\"~10.2.1\",\"@angular/forms\":\"~10.2.1\",\"@angular/material\":\"^10.2.7\",\"@angular/platform-browser\":\"~10.2.1\",\"@angular/platform-browser-dynamic\":\"~10.2.1\",\"@angular/router\":\"~10.2.1\",\"@auth0/angular-jwt\":\"^4.0.0\",\"@kolkov/angular-editor\":\"^1.1.4\",\"@ngrx/store\":\"^10.1.2\",\"chart\":\"^0.1.2\",\"chart.js\":\"^3.6.0\",\"file-saver\":\"^2.0.5\",\"ngx-cookie-service\":\"^3.0.4\",\"rxjs\":\"~6.6.3\",\"tslib\":\"^2.0.0\",\"xlsx\":\"^0.17.3\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1002.0\",\"@angular/cli\":\"~10.2.0\",\"@angular/compiler-cli\":\"~10.2.1\",\"@angular/language-service\":\"~10.2.1\",\"@types/jasmine\":\"~3.3.8\",\"@types/jasminewd2\":\"~2.0.3\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^5.1.2\",\"jasmine-core\":\"~3.5.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.0.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage-istanbul-reporter\":\"~3.0.2\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~7.0.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.5\"},\"description\":\"This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.\",\"main\":\"karma.conf.js\",\"author\":\"\",\"license\":\"ISC\"}");
 
 /***/ }),
 
@@ -1432,46 +1512,46 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'home',
-        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomeModule)
+        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomeModule)
     },
     {
         path: 'grupos',
-        loadChildren: () => Promise.all(/*! import() | grupos-grupos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("grupos-grupos-module")]).then(__webpack_require__.bind(null, /*! ./grupos/grupos.module */ "ZjLv")).then(m => m.GruposModule),
+        loadChildren: () => Promise.all(/*! import() | grupos-grupos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("grupos-grupos-module")]).then(__webpack_require__.bind(null, /*! ./grupos/grupos.module */ "ZjLv")).then(m => m.GruposModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'opciones',
-        loadChildren: () => Promise.all(/*! import() | opciones-opciones-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("opciones-opciones-module")]).then(__webpack_require__.bind(null, /*! ./opciones/opciones.module */ "12xl")).then(m => m.OpcionesModule),
+        loadChildren: () => Promise.all(/*! import() | opciones-opciones-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("opciones-opciones-module")]).then(__webpack_require__.bind(null, /*! ./opciones/opciones.module */ "12xl")).then(m => m.OpcionesModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'roles',
-        loadChildren: () => Promise.all(/*! import() | roles-roles-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("roles-roles-module")]).then(__webpack_require__.bind(null, /*! ./roles/roles.module */ "ESCD")).then(m => m.RolesModule),
+        loadChildren: () => Promise.all(/*! import() | roles-roles-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("roles-roles-module")]).then(__webpack_require__.bind(null, /*! ./roles/roles.module */ "ESCD")).then(m => m.RolesModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'roles-menu',
-        loadChildren: () => Promise.all(/*! import() | roles-menu-roles-menu-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("roles-menu-roles-menu-module")]).then(__webpack_require__.bind(null, /*! ./roles-menu/roles-menu.module */ "cUcC")).then(m => m.RolesMenuModule),
+        loadChildren: () => Promise.all(/*! import() | roles-menu-roles-menu-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("roles-menu-roles-menu-module")]).then(__webpack_require__.bind(null, /*! ./roles-menu/roles-menu.module */ "cUcC")).then(m => m.RolesMenuModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'usuarios',
-        loadChildren: () => Promise.all(/*! import() | usuarios-usuarios-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("usuarios-usuarios-module")]).then(__webpack_require__.bind(null, /*! ./usuarios/usuarios.module */ "0G8V")).then(m => m.UsuariosModule),
+        loadChildren: () => Promise.all(/*! import() | usuarios-usuarios-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("usuarios-usuarios-module")]).then(__webpack_require__.bind(null, /*! ./usuarios/usuarios.module */ "0G8V")).then(m => m.UsuariosModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'perfil',
-        loadChildren: () => Promise.all(/*! import() | perfil-perfil-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null, /*! ./perfil/perfil.module */ "ZEuG")).then(m => m.PerfilModule),
+        loadChildren: () => Promise.all(/*! import() | perfil-perfil-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null, /*! ./perfil/perfil.module */ "ZEuG")).then(m => m.PerfilModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'logs',
-        loadChildren: () => Promise.all(/*! import() | logs-logs-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("logs-logs-module")]).then(__webpack_require__.bind(null, /*! ./logs/logs.module */ "pQIV")).then(m => m.LogsModule),
+        loadChildren: () => Promise.all(/*! import() | logs-logs-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("logs-logs-module")]).then(__webpack_require__.bind(null, /*! ./logs/logs.module */ "pQIV")).then(m => m.LogsModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
         path: 'inicio',
-        loadChildren: () => Promise.all(/*! import() | inicio-inicio-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("inicio-inicio-module")]).then(__webpack_require__.bind(null, /*! ./inicio/inicio.module */ "MpVM")).then(m => m.InicioModule),
+        loadChildren: () => Promise.all(/*! import() | inicio-inicio-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("inicio-inicio-module")]).then(__webpack_require__.bind(null, /*! ./inicio/inicio.module */ "MpVM")).then(m => m.InicioModule),
         canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]]
     },
     {
@@ -1483,20 +1563,21 @@ const routes = [
         pathMatch: 'full',
         redirectTo: 'home'
     },
-    { path: 'motivos-reunion', loadChildren: () => Promise.all(/*! import() | motivos-reunion-motivos-reunion-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("motivos-reunion-motivos-reunion-module")]).then(__webpack_require__.bind(null, /*! ./motivos-reunion/motivos-reunion.module */ "sV9e")).then(m => m.MotivosReunionModule) },
-    { path: 'modos-reunion', loadChildren: () => Promise.all(/*! import() | modos-reunion-modos-reunion-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("modos-reunion-modos-reunion-module")]).then(__webpack_require__.bind(null, /*! ./modos-reunion/modos-reunion.module */ "LqJu")).then(m => m.ModosReunionModule) },
-    { path: 'zonas', loadChildren: () => Promise.all(/*! import() | zonas-zonas-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("zonas-zonas-module")]).then(__webpack_require__.bind(null, /*! ./zonas/zonas.module */ "iIxd")).then(m => m.ZonasModule) },
-    { path: 'tipos-entidad', loadChildren: () => Promise.all(/*! import() | tipos-entidad-tipos-entidad-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("tipos-entidad-tipos-entidad-module")]).then(__webpack_require__.bind(null, /*! ./tipos-entidad/tipos-entidad.module */ "oBpF")).then(m => m.TiposEntidadModule) },
-    { path: 'contactos', loadChildren: () => Promise.all(/*! import() | contactos-contactos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("contactos-contactos-module")]).then(__webpack_require__.bind(null, /*! ./contactos/contactos.module */ "uAx7")).then(m => m.ContactosModule) },
-    { path: 'entidades', loadChildren: () => Promise.all(/*! import() | entidades-entidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("entidades-entidades-module")]).then(__webpack_require__.bind(null, /*! ./entidades/entidades.module */ "5bAz")).then(m => m.EntidadesModule) },
-    { path: 'reuniones', loadChildren: () => Promise.all(/*! import() | reuniones-reuniones-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("reuniones-reuniones-module")]).then(__webpack_require__.bind(null, /*! ./reuniones/reuniones.module */ "53tf")).then(m => m.ReunionesModule) },
-    { path: 'familias', loadChildren: () => Promise.all(/*! import() | familias-familias-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("familias-familias-module")]).then(__webpack_require__.bind(null, /*! ./familias/familias.module */ "ndpJ")).then(m => m.FamiliasModule) },
-    { path: 'niveles', loadChildren: () => Promise.all(/*! import() | niveles-niveles-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("niveles-niveles-module")]).then(__webpack_require__.bind(null, /*! ./niveles/niveles.module */ "AWlZ")).then(m => m.NivelesModule) },
-    { path: 'unidades-dual', loadChildren: () => Promise.all(/*! import() | unidades-dual-unidades-dual-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("unidades-dual-unidades-dual-module")]).then(__webpack_require__.bind(null, /*! ./unidades-dual/unidades-dual.module */ "dRTf")).then(m => m.UnidadesDualModule) },
-    { path: 'ciclos', loadChildren: () => Promise.all(/*! import() | ciclos-ciclos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("ciclos-ciclos-module")]).then(__webpack_require__.bind(null, /*! ./ciclos/ciclos.module */ "MpFz")).then(m => m.CiclosModule) },
+    { path: 'motivos-reunion', loadChildren: () => Promise.all(/*! import() | motivos-reunion-motivos-reunion-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("motivos-reunion-motivos-reunion-module")]).then(__webpack_require__.bind(null, /*! ./motivos-reunion/motivos-reunion.module */ "sV9e")).then(m => m.MotivosReunionModule) },
+    { path: 'modos-reunion', loadChildren: () => Promise.all(/*! import() | modos-reunion-modos-reunion-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("modos-reunion-modos-reunion-module")]).then(__webpack_require__.bind(null, /*! ./modos-reunion/modos-reunion.module */ "LqJu")).then(m => m.ModosReunionModule) },
+    { path: 'zonas', loadChildren: () => Promise.all(/*! import() | zonas-zonas-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("zonas-zonas-module")]).then(__webpack_require__.bind(null, /*! ./zonas/zonas.module */ "iIxd")).then(m => m.ZonasModule) },
+    { path: 'tipos-entidad', loadChildren: () => Promise.all(/*! import() | tipos-entidad-tipos-entidad-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("tipos-entidad-tipos-entidad-module")]).then(__webpack_require__.bind(null, /*! ./tipos-entidad/tipos-entidad.module */ "oBpF")).then(m => m.TiposEntidadModule) },
+    { path: 'contactos', loadChildren: () => Promise.all(/*! import() | contactos-contactos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("contactos-contactos-module")]).then(__webpack_require__.bind(null, /*! ./contactos/contactos.module */ "uAx7")).then(m => m.ContactosModule) },
+    { path: 'entidades', loadChildren: () => Promise.all(/*! import() | entidades-entidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("entidades-entidades-module")]).then(__webpack_require__.bind(null, /*! ./entidades/entidades.module */ "5bAz")).then(m => m.EntidadesModule) },
+    { path: 'reuniones', loadChildren: () => Promise.all(/*! import() | reuniones-reuniones-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("reuniones-reuniones-module")]).then(__webpack_require__.bind(null, /*! ./reuniones/reuniones.module */ "53tf")).then(m => m.ReunionesModule) },
+    { path: 'familias', loadChildren: () => Promise.all(/*! import() | familias-familias-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("familias-familias-module")]).then(__webpack_require__.bind(null, /*! ./familias/familias.module */ "ndpJ")).then(m => m.FamiliasModule) },
+    { path: 'niveles', loadChildren: () => Promise.all(/*! import() | niveles-niveles-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("niveles-niveles-module")]).then(__webpack_require__.bind(null, /*! ./niveles/niveles.module */ "AWlZ")).then(m => m.NivelesModule) },
+    { path: 'unidades-dual', loadChildren: () => Promise.all(/*! import() | unidades-dual-unidades-dual-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-dual-unidades-dual-module")]).then(__webpack_require__.bind(null, /*! ./unidades-dual/unidades-dual.module */ "dRTf")).then(m => m.UnidadesDualModule) },
+    { path: 'ciclos', loadChildren: () => Promise.all(/*! import() | ciclos-ciclos-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("ciclos-ciclos-module")]).then(__webpack_require__.bind(null, /*! ./ciclos/ciclos.module */ "MpFz")).then(m => m.CiclosModule) },
     //  { path: 'unidades', loadChildren: () => import('./entidades/datos-entidad/unidades/unidades.module').then(m => m.UnidadesModule) },
-    { path: 'motivos-nodual', loadChildren: () => Promise.all(/*! import() | motivos-nodual-motivos-nodual-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("motivos-nodual-motivos-nodual-module")]).then(__webpack_require__.bind(null, /*! ./motivos-nodual/motivos-nodual.module */ "diRc")).then(m => m.MotivosNodualModule) },
-    { path: 'unidades', loadChildren: () => Promise.all(/*! import() | unidades-unidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null, /*! ./unidades/unidades.module */ "Bm/3")).then(m => m.UnidadesModule) },
+    { path: 'motivos-nodual', loadChildren: () => Promise.all(/*! import() | motivos-nodual-motivos-nodual-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("motivos-nodual-motivos-nodual-module")]).then(__webpack_require__.bind(null, /*! ./motivos-nodual/motivos-nodual.module */ "diRc")).then(m => m.MotivosNodualModule) },
+    { path: 'unidades', loadChildren: () => Promise.all(/*! import() | unidades-unidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null, /*! ./unidades/unidades.module */ "Bm/3")).then(m => m.UnidadesModule) },
+    { path: 'unidades-centro', loadChildren: () => Promise.all(/*! import() | unidades-centro-unidades-centro-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-centro-unidades-centro-module")]).then(__webpack_require__.bind(null, /*! ./unidades-centro/unidades-centro.module */ "kTDH")).then(m => m.UnidadesCentroModule) },
     //  { path: 'ciclos-entidad', loadChildren: () => import('./entidades/datos-entidad/ciclos-entidad/ciclos-entidad.module').then(m => m.CiclosEntidadModule) },
     //  { path: 'contactos-entidad', loadChildren: () => import('./entidades/datos-entidad/contactos-entidad/contactos-entidad.module').then(m => m.ContactosEntidadModule) },
     //  { path: 'datos-basicos-entidad', loadChildren: () => import('./entidades/datos-entidad/datos-basicos-entidad/datos-basicos-entidad.module').then(m => m.DatosBasicosEntidadModule) },
@@ -1504,7 +1585,7 @@ const routes = [
     //  { path: 'add-asistente', loadChildren: () => import('./reuniones/datos-reunion/asistentes/add-asistente/add-asistente.module').then(m => m.AddAsistenteModule) },
     {
         path: '**',
-        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomeModule)
+        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomeModule)
     },
 ];
 class AppRoutingModule {

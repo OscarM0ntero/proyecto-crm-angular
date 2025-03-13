@@ -14,6 +14,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 import { DatosEntidadComponent } from './entidades/datos-entidad/datos-entidad.component'
 import { DatosReunionComponent } from './reuniones/datos-reunion/datos-reunion.component'
+import { UnidadesCentroService } from './services/unidades-centro.service';
 
 // import { NgxLoadingXModule, POSITION, SPINNER, NgxLoadingXConfig } from 'ngx-loading-x';
 
@@ -50,7 +51,8 @@ import { DatosReunionComponent } from './reuniones/datos-reunion/datos-reunion.c
     CookieService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     DatosEntidadComponent,
-    DatosReunionComponent
+    DatosReunionComponent,
+    UnidadesCentroService
   ],
   bootstrap: [AppComponent]
 })

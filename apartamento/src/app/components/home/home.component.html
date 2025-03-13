@@ -11,6 +11,27 @@
 	</div>
 </section>
 
+<section>
+    <p-carousel 
+        [value]="images"
+        [numVisible]="3"
+        [numScroll]="1"
+        [circular]="true"
+        [autoplayInterval]="2500"
+        [responsiveOptions]="responsiveOptions"
+		[showIndicators]="false"
+        styleClass="custom-carousel">
+        
+        <ng-template pTemplate="item" let-image>
+            <div class="carousel-item">
+                <img [src]="image.itemImageSrc" [alt]="image.alt" />
+            </div>
+        </ng-template>
+
+    </p-carousel>
+</section>
+
+
 <section class="booking-rating">
 	<div class="rating-box">
 		<p>Valoración en Booking</p>
@@ -18,11 +39,12 @@
 	</div>
 </section>
 
+<!--
 <div class="image-slider-container">
 	<ng-image-slider
 	[images]="imageObject" [infinite]="true" [autoSlide]="2.5" [manageImageRatio]="true" [imageSize]="{width: '32.5%', height: '320px', space: 5}" [animationSpeed]="0.5"></ng-image-slider>
 </div>
-
+-->
 
 <section class="faq-section">
 
@@ -38,7 +60,8 @@
 		</details>
 		<details>
 			<summary>¿Cómo se realiza el check-in?</summary>
-			<p>El check-in se realiza de forma autónoma: se rellena un formulario online y una vez entregado se le darán los códigos de acceso para acceder al apartamento.</p>
+			<p>El check-in se realiza de forma autónoma: se rellena un formulario online y una vez entregado se le darán
+				los códigos de acceso para acceder al apartamento.</p>
 		</details>
 		<details>
 			<summary>¿Se permiten mascotas?</summary>

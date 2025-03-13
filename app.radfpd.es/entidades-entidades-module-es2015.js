@@ -36,9 +36,9 @@ const routes = [
     },
     {
         path: 'unidades',
-        loadChildren: () => Promise.all(/*! import() | unidades-unidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null, /*! ./unidades/unidades.module */ "Hw+l")).then(m => m.UnidadesModule),
+        loadChildren: () => Promise.all(/*! import() | unidades-unidades-module */[__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null, /*! ./unidades/unidades.module */ "Hw+l")).then(m => m.UnidadesModule),
         outlet: 'sidebar'
-    },
+    }
 ];
 class DatosEntidadRoutingModule {
 }

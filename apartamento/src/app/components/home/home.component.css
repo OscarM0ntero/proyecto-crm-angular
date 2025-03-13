@@ -49,3 +49,31 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Agrega espacio entre las imágenes del carrusel */
+:host ::ng-deep .p-carousel-items-container {
+    gap: 7px !important;
+}
+
+/* Ajusta cada ítem del carrusel */
+:host ::ng-deep .p-carousel-item {
+    padding: 0 2.5px !important; /* Divide el espacio en ambos lados */
+}
+
+/* Ajusta cada imagen dentro del carrusel */
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+/* Asegura que las imágenes llenen el espacio sin distorsionarse */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

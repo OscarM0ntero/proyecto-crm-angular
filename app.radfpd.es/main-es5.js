@@ -1490,6 +1490,159 @@
     },
 
     /***/
+    "S+72":
+    /*!*****************************************************!*\
+      !*** ./src/app/services/unidades-centro.service.ts ***!
+      \*****************************************************/
+
+    /*! exports provided: UnidadesCentroService */
+
+    /***/
+    function S72(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UnidadesCentroService", function () {
+        return UnidadesCentroService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! src/environments/environment */
+      "AytR");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /* harmony import */
+
+
+      var _shared_common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../shared/common.service */
+      "JSOo");
+
+      var ENDPOINT = 'unidad_centro';
+
+      var UnidadesCentroService = /*#__PURE__*/function () {
+        function UnidadesCentroService(http, commonService) {
+          _classCallCheck(this, UnidadesCentroService);
+
+          this.http = http;
+          this.commonService = commonService;
+        }
+
+        _createClass(UnidadesCentroService, [{
+          key: "get",
+          value: function get() {
+            return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php"), {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "getUnidades",
+          value: function getUnidades() {
+            return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php"), {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "getAllUnidadesCentro",
+          value: function getAllUnidadesCentro() {
+            return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php"), {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "addUnidadCentro",
+          value: function addUnidadCentro(unidadCentro) {
+            var body = JSON.stringify(unidadCentro);
+            return this.http.post("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php"), body, {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "editUnidadCentro",
+          value: function editUnidadCentro(unidadCentro) {
+            var body = JSON.stringify(unidadCentro);
+            return this.http.put("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php"), body, {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "deleteUnidadCentro",
+          value: function deleteUnidadCentro(idUnidadCentro) {
+            return this.http["delete"]("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["URL_API"], "/").concat(ENDPOINT, ".php?id=").concat(idUnidadCentro), {
+              headers: this.commonService.headers
+            });
+          }
+        }, {
+          key: "removeUnidadesCentro",
+          value: function removeUnidadesCentro(idUnidadCentro) {
+            this.unidadCentro = this.unidadCentro.filter(function (unidadCentro) {
+              return Number(unidadCentro.id_unidad_centro) !== Number(idUnidadCentro);
+            });
+          }
+        }, {
+          key: "updateUnidadesCentro",
+          value: function updateUnidadesCentro(unidadCentro) {
+            var index = null;
+            this.unidadCentro.filter(function (unidadCentroFilter, indexFilter) {
+              if (unidadCentro.id_unidad_centro === unidadCentroFilter.id_unidad_centro) {
+                index = indexFilter;
+              }
+            });
+
+            if (index) {
+              this.unidadCentro[index] = unidadCentro;
+            }
+          }
+        }]);
+
+        return UnidadesCentroService;
+      }();
+
+      UnidadesCentroService.ɵfac = function UnidadesCentroService_Factory(t) {
+        return new (t || UnidadesCentroService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_shared_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]));
+      };
+
+      UnidadesCentroService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: UnidadesCentroService,
+        factory: UnidadesCentroService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UnidadesCentroService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+          }, {
+            type: _shared_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "Sy1n":
     /*!**********************************!*\
       !*** ./src/app/app.component.ts ***!
@@ -1787,7 +1940,7 @@
       !*** ./src/app/shared/messages.ts ***!
       \************************************/
 
-    /*! exports provided: ERROR, CLOSE, INVALID_FORM, ENTIDAD_MOTIVO_REUNION, ENTIDAD_MODO_REUNION, ENTIDAD_ZONA, ENTIDAD_TIPO_ENTIDAD, ENTIDAD_CONTACTO, ENTIDAD_ENTIDAD, ENTIDAD_REUNION, ENTIDAD_ASISTENTE, ENTIDAD_FAMILIA, ENTIDAD_UNIDAD, ENTIDAD_CICLO */
+    /*! exports provided: ERROR, CLOSE, INVALID_FORM, ENTIDAD_MOTIVO_REUNION, ENTIDAD_MODO_REUNION, ENTIDAD_ZONA, ENTIDAD_TIPO_ENTIDAD, ENTIDAD_CONTACTO, ENTIDAD_ENTIDAD, ENTIDAD_REUNION, ENTIDAD_ASISTENTE, ENTIDAD_FAMILIA, ENTIDAD_UNIDAD, ENTIDAD_CICLO, ENTIDAD_UNIDAD_CENTRO */
 
     /***/
     function Xksa(module, __webpack_exports__, __webpack_require__) {
@@ -1878,6 +2031,12 @@
       __webpack_require__.d(__webpack_exports__, "ENTIDAD_CICLO", function () {
         return ENTIDAD_CICLO;
       });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ENTIDAD_UNIDAD_CENTRO", function () {
+        return ENTIDAD_UNIDAD_CENTRO;
+      });
 
       var ERROR = 'Ocurrió un fallo';
       var CLOSE = 'Cerrar';
@@ -1894,6 +2053,7 @@
       var ENTIDAD_FAMILIA = "Familia";
       var ENTIDAD_UNIDAD = "Ciclo Formativo";
       var ENTIDAD_CICLO = "Ciclo Formativo";
+      var ENTIDAD_UNIDAD_CENTRO = "Unidad Centro";
       /***/
     },
 
@@ -2078,7 +2238,13 @@
 
       var _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ./reuniones/datos-reunion/datos-reunion.component */
-      "2/A8"); // import { NgxLoadingXModule, POSITION, SPINNER, NgxLoadingXConfig } from 'ngx-loading-x';
+      "2/A8");
+      /* harmony import */
+
+
+      var _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./services/unidades-centro.service */
+      "S+72"); // import { NgxLoadingXModule, POSITION, SPINNER, NgxLoadingXConfig } from 'ngx-loading-x';
       // const ngxLoadingXConfig: NgxLoadingXConfig = {
       //   show: false,
       //   bgBlur: 2,
@@ -2110,7 +2276,7 @@
           provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"],
           useClass: _shared_interceptor_service__WEBPACK_IMPORTED_MODULE_8__["AuthInterceptor"],
           multi: true
-        }, _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"], _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"]],
+        }, _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"], _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"], _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__["UnidadesCentroService"]],
         imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _shared_navbar_navbar_module__WEBPACK_IMPORTED_MODULE_7__["NavbarModule"], _app_shared_footer_footer_module__WEBPACK_IMPORTED_MODULE_9__["FooterModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_10__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatNativeDateModule"] // NgxLoadingXModule.forRoot(ngxLoadingXConfig)
         ]]
       });
@@ -2136,7 +2302,7 @@
               provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"],
               useClass: _shared_interceptor_service__WEBPACK_IMPORTED_MODULE_8__["AuthInterceptor"],
               multi: true
-            }, _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"], _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"]],
+            }, _entidades_datos_entidad_datos_entidad_component__WEBPACK_IMPORTED_MODULE_12__["DatosEntidadComponent"], _reuniones_datos_reunion_datos_reunion_component__WEBPACK_IMPORTED_MODULE_13__["DatosReunionComponent"], _services_unidades_centro_service__WEBPACK_IMPORTED_MODULE_14__["UnidadesCentroService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
           }]
         }], null, null);
@@ -2665,7 +2831,7 @@
 
     /***/
     function kiQV(module) {
-      module.exports = JSON.parse("{\"name\":\"app-radfpd\",\"version\":\"1.0.2\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"buildProd\":\"ng build --prod --outputHashing=all\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"serveAll\":\"ng serve --host 10.22.3.91\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~10.2.1\",\"@angular/cdk\":\"~10.2.7\",\"@angular/common\":\"~10.2.1\",\"@angular/compiler\":\"~10.2.1\",\"@angular/core\":\"~10.2.1\",\"@angular/forms\":\"~10.2.1\",\"@angular/material\":\"^10.2.7\",\"@angular/platform-browser\":\"~10.2.1\",\"@angular/platform-browser-dynamic\":\"~10.2.1\",\"@angular/router\":\"~10.2.1\",\"@auth0/angular-jwt\":\"^4.0.0\",\"@kolkov/angular-editor\":\"^1.1.4\",\"@ngrx/store\":\"^10.1.2\",\"chart\":\"^0.1.2\",\"chart.js\":\"^3.6.0\",\"file-saver\":\"^2.0.5\",\"ngx-cookie-service\":\"^3.0.4\",\"rxjs\":\"~6.6.3\",\"tslib\":\"^2.0.0\",\"xlsx\":\"^0.17.3\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1002.0\",\"@angular/cli\":\"~10.2.0\",\"@angular/compiler-cli\":\"~10.2.1\",\"@angular/language-service\":\"~10.2.1\",\"@types/jasmine\":\"~3.3.8\",\"@types/jasminewd2\":\"~2.0.3\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^5.1.2\",\"jasmine-core\":\"~3.5.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.0.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage-istanbul-reporter\":\"~3.0.2\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~7.0.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.5\"},\"description\":\"This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.\",\"main\":\"karma.conf.js\",\"author\":\"\",\"license\":\"ISC\"}");
+      module.exports = JSON.parse("{\"name\":\"app-radfpd\",\"version\":\"1.0.3\",\"scripts\":{\"ng\":\"ng\",\"start\":\"ng serve\",\"build\":\"ng build\",\"buildProd\":\"ng build --prod --outputHashing=all\",\"test\":\"ng test\",\"lint\":\"ng lint\",\"e2e\":\"ng e2e\",\"serveAll\":\"ng serve --host 10.22.3.91\"},\"private\":true,\"dependencies\":{\"@angular/animations\":\"~10.2.1\",\"@angular/cdk\":\"~10.2.7\",\"@angular/common\":\"~10.2.1\",\"@angular/compiler\":\"~10.2.1\",\"@angular/core\":\"~10.2.1\",\"@angular/forms\":\"~10.2.1\",\"@angular/material\":\"^10.2.7\",\"@angular/platform-browser\":\"~10.2.1\",\"@angular/platform-browser-dynamic\":\"~10.2.1\",\"@angular/router\":\"~10.2.1\",\"@auth0/angular-jwt\":\"^4.0.0\",\"@kolkov/angular-editor\":\"^1.1.4\",\"@ngrx/store\":\"^10.1.2\",\"chart\":\"^0.1.2\",\"chart.js\":\"^3.6.0\",\"file-saver\":\"^2.0.5\",\"ngx-cookie-service\":\"^3.0.4\",\"rxjs\":\"~6.6.3\",\"tslib\":\"^2.0.0\",\"xlsx\":\"^0.17.3\",\"zone.js\":\"~0.10.2\"},\"devDependencies\":{\"@angular-devkit/build-angular\":\"~0.1002.0\",\"@angular/cli\":\"~10.2.0\",\"@angular/compiler-cli\":\"~10.2.1\",\"@angular/language-service\":\"~10.2.1\",\"@types/jasmine\":\"~3.3.8\",\"@types/jasminewd2\":\"~2.0.3\",\"@types/node\":\"^12.11.1\",\"codelyzer\":\"^5.1.2\",\"jasmine-core\":\"~3.5.0\",\"jasmine-spec-reporter\":\"~5.0.0\",\"karma\":\"~5.0.0\",\"karma-chrome-launcher\":\"~3.1.0\",\"karma-coverage-istanbul-reporter\":\"~3.0.2\",\"karma-jasmine\":\"~4.0.0\",\"karma-jasmine-html-reporter\":\"^1.5.0\",\"protractor\":\"~7.0.0\",\"ts-node\":\"~7.0.0\",\"tslint\":\"~6.1.0\",\"typescript\":\"~4.0.5\"},\"description\":\"This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.\",\"main\":\"karma.conf.js\",\"author\":\"\",\"license\":\"ISC\"}");
       /***/
     },
 
@@ -2975,7 +3141,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-home-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
           /*! ./home/home.module */
           "ct+p")).then(function (m) {
             return m.HomeModule;
@@ -2986,7 +3152,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | grupos-grupos-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("grupos-grupos-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("grupos-grupos-module")]).then(__webpack_require__.bind(null,
           /*! ./grupos/grupos.module */
           "ZjLv")).then(function (m) {
             return m.GruposModule;
@@ -2998,7 +3164,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | opciones-opciones-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("opciones-opciones-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("opciones-opciones-module")]).then(__webpack_require__.bind(null,
           /*! ./opciones/opciones.module */
           "12xl")).then(function (m) {
             return m.OpcionesModule;
@@ -3010,7 +3176,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | roles-roles-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("roles-roles-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("roles-roles-module")]).then(__webpack_require__.bind(null,
           /*! ./roles/roles.module */
           "ESCD")).then(function (m) {
             return m.RolesModule;
@@ -3022,7 +3188,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | roles-menu-roles-menu-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("roles-menu-roles-menu-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("roles-menu-roles-menu-module")]).then(__webpack_require__.bind(null,
           /*! ./roles-menu/roles-menu.module */
           "cUcC")).then(function (m) {
             return m.RolesMenuModule;
@@ -3034,7 +3200,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | usuarios-usuarios-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("usuarios-usuarios-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("usuarios-usuarios-module")]).then(__webpack_require__.bind(null,
           /*! ./usuarios/usuarios.module */
           "0G8V")).then(function (m) {
             return m.UsuariosModule;
@@ -3046,7 +3212,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | perfil-perfil-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null,
           /*! ./perfil/perfil.module */
           "ZEuG")).then(function (m) {
             return m.PerfilModule;
@@ -3058,7 +3224,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | logs-logs-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("logs-logs-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("logs-logs-module")]).then(__webpack_require__.bind(null,
           /*! ./logs/logs.module */
           "pQIV")).then(function (m) {
             return m.LogsModule;
@@ -3070,7 +3236,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | inicio-inicio-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("inicio-inicio-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("inicio-inicio-module")]).then(__webpack_require__.bind(null,
           /*! ./inicio/inicio.module */
           "MpVM")).then(function (m) {
             return m.InicioModule;
@@ -3095,7 +3261,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | motivos-reunion-motivos-reunion-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("motivos-reunion-motivos-reunion-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("motivos-reunion-motivos-reunion-module")]).then(__webpack_require__.bind(null,
           /*! ./motivos-reunion/motivos-reunion.module */
           "sV9e")).then(function (m) {
             return m.MotivosReunionModule;
@@ -3106,7 +3272,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | modos-reunion-modos-reunion-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("modos-reunion-modos-reunion-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("modos-reunion-modos-reunion-module")]).then(__webpack_require__.bind(null,
           /*! ./modos-reunion/modos-reunion.module */
           "LqJu")).then(function (m) {
             return m.ModosReunionModule;
@@ -3117,7 +3283,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | zonas-zonas-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("zonas-zonas-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("zonas-zonas-module")]).then(__webpack_require__.bind(null,
           /*! ./zonas/zonas.module */
           "iIxd")).then(function (m) {
             return m.ZonasModule;
@@ -3128,7 +3294,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | tipos-entidad-tipos-entidad-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("tipos-entidad-tipos-entidad-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("tipos-entidad-tipos-entidad-module")]).then(__webpack_require__.bind(null,
           /*! ./tipos-entidad/tipos-entidad.module */
           "oBpF")).then(function (m) {
             return m.TiposEntidadModule;
@@ -3139,7 +3305,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | contactos-contactos-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("contactos-contactos-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("contactos-contactos-module")]).then(__webpack_require__.bind(null,
           /*! ./contactos/contactos.module */
           "uAx7")).then(function (m) {
             return m.ContactosModule;
@@ -3150,7 +3316,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | entidades-entidades-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("entidades-entidades-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("entidades-entidades-module")]).then(__webpack_require__.bind(null,
           /*! ./entidades/entidades.module */
           "5bAz")).then(function (m) {
             return m.EntidadesModule;
@@ -3161,7 +3327,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | reuniones-reuniones-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("reuniones-reuniones-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("reuniones-reuniones-module")]).then(__webpack_require__.bind(null,
           /*! ./reuniones/reuniones.module */
           "53tf")).then(function (m) {
             return m.ReunionesModule;
@@ -3172,7 +3338,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | familias-familias-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("familias-familias-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("familias-familias-module")]).then(__webpack_require__.bind(null,
           /*! ./familias/familias.module */
           "ndpJ")).then(function (m) {
             return m.FamiliasModule;
@@ -3183,7 +3349,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | niveles-niveles-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("niveles-niveles-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("niveles-niveles-module")]).then(__webpack_require__.bind(null,
           /*! ./niveles/niveles.module */
           "AWlZ")).then(function (m) {
             return m.NivelesModule;
@@ -3194,7 +3360,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | unidades-dual-unidades-dual-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("unidades-dual-unidades-dual-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-dual-unidades-dual-module")]).then(__webpack_require__.bind(null,
           /*! ./unidades-dual/unidades-dual.module */
           "dRTf")).then(function (m) {
             return m.UnidadesDualModule;
@@ -3205,7 +3371,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | ciclos-ciclos-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("ciclos-ciclos-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("ciclos-ciclos-module")]).then(__webpack_require__.bind(null,
           /*! ./ciclos/ciclos.module */
           "MpFz")).then(function (m) {
             return m.CiclosModule;
@@ -3217,7 +3383,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | motivos-nodual-motivos-nodual-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("motivos-nodual-motivos-nodual-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("motivos-nodual-motivos-nodual-module")]).then(__webpack_require__.bind(null,
           /*! ./motivos-nodual/motivos-nodual.module */
           "diRc")).then(function (m) {
             return m.MotivosNodualModule;
@@ -3228,10 +3394,21 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | unidades-unidades-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-unidades-module")]).then(__webpack_require__.bind(null,
           /*! ./unidades/unidades.module */
           "Bm/3")).then(function (m) {
             return m.UnidadesModule;
+          });
+        }
+      }, {
+        path: 'unidades-centro',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | unidades-centro-unidades-centro-module */
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("common"), __webpack_require__.e("unidades-centro-unidades-centro-module")]).then(__webpack_require__.bind(null,
+          /*! ./unidades-centro/unidades-centro.module */
+          "kTDH")).then(function (m) {
+            return m.UnidadesCentroModule;
           });
         }
       }, //  { path: 'ciclos-entidad', loadChildren: () => import('./entidades/datos-entidad/ciclos-entidad/ciclos-entidad.module').then(m => m.CiclosEntidadModule) },
@@ -3244,7 +3421,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-home-module */
-          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~87c33caf"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~ciclos-ciclos-module~contactos-contactos-module~entidades-entidades-module~familias-familias~da2006e9"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
           /*! ./home/home.module */
           "ct+p")).then(function (m) {
             return m.HomeModule;

@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
-import { NgImageSliderModule } from 'ng-image-slider';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css'],
-  standalone: true,
-  imports: [RouterModule, HeaderComponent, NgImageSliderModule]
+	selector: 'app-layout',
+	templateUrl: './layout.component.html',
+	styleUrls: ['./layout.component.css'],
+	imports: [RouterModule, HeaderComponent, CarouselModule]
 })
 export class LayoutComponent {
-  currentYear: number = new Date().getFullYear();
+	currentYear: number = new Date().getFullYear();
 
-  imageObject: Array<object> = [
-    {image: '/assets/IMG_01.jpg', thumbImage: '/assets/IMG_01.jpg', alt: 'Imagen 1'},
-    {image: '/assets/IMG_02.jpg', thumbImage: '/assets/IMG_A.gif', alt: 'Imagen 2'},
-    {image: '/assets/IMG_03.jpg', thumbImage: '/assets/IMG_09.jpg', alt: 'Imagen 3'},
-  ];
+    images = [
+        { itemImageSrc: '/assets/IMG_01.jpg', alt: 'Imagen 1' },
+        { itemImageSrc: '/assets/IMG_05.jpg', alt: 'Imagen 2' },
+        { itemImageSrc: '/assets/IMG_09.jpg', alt: 'Imagen 3' }
+    ];
+
+    responsiveOptions = [
+        { breakpoint: '1024px', numVisible: 1, numScroll: 1 },
+        { breakpoint: '768px', numVisible: 1, numScroll: 1 },
+        { breakpoint: '560px', numVisible: 1, numScroll: 1 }
+    ];
 }
 
